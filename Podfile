@@ -8,13 +8,11 @@ target 'RentBi' do
   # Pods for RentBi
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-<<<<<<< HEAD
   pod 'Material', '~> 2.0'
-=======
   pod 'LiquidFloatingActionButton', :git => 'https://github.com/yoavlt/LiquidFloatingActionButton.git'
-pod 'SnapKit', '~> 3.2.0'
+  pod 'SnapKit', '~> 3.2.0'
+  pod 'SwiftIconFont'
 
->>>>>>> b6e9fd43785763cb318f02c13d11c491e877a99f
 
   target 'RentBiTests' do
     inherit! :search_paths

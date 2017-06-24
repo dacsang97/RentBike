@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,6 +27,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ab9-gt-ebU" customClass="SwiftIconButton" customModule="SwiftIconFont">
+                                <rect key="frame" x="26" y="30" width="37.5" height="37.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ab9-gt-ebU" secondAttribute="height" multiplier="1:1" id="1XS-oa-MbJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="fa:bars"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="Icon" value="fa:fa-bars"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="ToggleMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E52-Fr-aro"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1A-G5-K0d">
                                 <rect key="frame" x="287" y="521" width="56" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,7 +57,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ab9-gt-ebU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="0j9-XU-PEO"/>
                             <constraint firstItem="Zp0-TH-AAm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MgT-2g-f0H"/>
+                            <constraint firstItem="ab9-gt-ebU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="N8n-Gh-dxI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="j1A-G5-K0d" secondAttribute="trailing" constant="16" id="Vmb-C5-ZdD"/>
                             <constraint firstItem="Zp0-TH-AAm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZnE-jT-M8w"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="j1A-G5-K0d" secondAttribute="bottom" constant="90" id="ai3-IC-ZEm"/>
@@ -71,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85n-fv-z7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121" y="779"/>
+            <point key="canvasLocation" x="140" y="798.35082458770626"/>
         </scene>
         <!--Sidebar View Controller-->
         <scene sceneID="erq-cu-auq">

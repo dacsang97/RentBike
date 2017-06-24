@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import LiquidFloatingActionButton
 import SnapKit
+import SwiftIconFont
 
 class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationManagerDelegate , LiquidFloatingActionButtonDataSource , LiquidFloatingActionButtonDelegate {
 
@@ -184,6 +185,9 @@ class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
             liquidFloatingActionButton.close()
         }
 
+    @IBAction func ToggleMenu(_ sender: UIButton) {
+        navigationDrawerController?.toggleLeftView()
+    }
 
 }
 
