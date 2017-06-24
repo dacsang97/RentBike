@@ -8,18 +8,18 @@
 
 import UIKit
 import GoogleMaps
+import LiquidFloatingActionButton
+import SnapKit
 
-class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationManagerDelegate {
+class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationManagerDelegate , LiquidFloatingActionButtonDataSource , LiquidFloatingActionButtonDelegate {
 
-    @IBOutlet var btnView: UIView!
+
     @IBOutlet var mapView: GMSMapView!
-    @IBOutlet var btnOutlet: [UIButton]!
+  
     var locationManager = CLLocationManager()
     
     @IBOutlet var btnUserLocation: UIButton!
-    @IBOutlet var btnParking: UIButton!
-    @IBOutlet var btnRentBike: UIButton!
-    @IBOutlet var btnGasStation: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,34 +31,15 @@ class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
 
-     
-        self.view.insertSubview(mapView, at: 0)
-        self.view.insertSubview(btnView, at: 1)
         btnUserLocation.layer.cornerRadius = 20
-        btnGasStation.layer.cornerRadius = 20
-        btnParking.layer.cornerRadius = 20
-        btnRentBike.layer.cornerRadius = 20
+   
+        
+        setupMaterial()
 
         // Do any additional setup after loading the view.
     }
-    override func viewDidAppear(_ animated: Bool) {
-        
-        
-    }
-    
-//    //Location Manager delegates
-//    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        
-//        let location = locations.last
-//        
-//        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
-//        
-//        self.mapView?.animate(to: camera)
-//        
-//        //Finally stop updating location otherwise it will come again and again in this delegate
-//        self.locationManager.stopUpdatingLocation()
-//        
-//    }
+       
+
     
     
     
@@ -90,5 +71,124 @@ class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
         // Pass the selected object to the new view controller.
     }
     */
+    
+    public class CustomCell : LiquidFloatingCell {
+        var name: String = "sample"
+        
+        init(icon: UIImage, name: String) {
+            self.name = name
+            super.init(icon: icon)
+        }
+        
+        required public init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        public override func setupView(_ view: UIView) {
+            super.setupView(view)
+            let label = UILabel()
+            label.text = name
+            label.textColor = UIColor.white
+            label.font = UIFont(name: "Helvetica-Neue", size: 12)
+            addSubview(label)
+            label.snp.makeConstraints { make in
+                make.left.equalTo(self).offset(-80)
+                make.width.equalTo(75)
+                make.top.height.equalTo(self)
+            }
+        }
+    }
+    
+    public class CustomDrawingActionButton: LiquidFloatingActionButton {
+        
+        override public func createPlusLayer(_ frame: CGRect) -> CAShapeLayer {
+            
+            let plusLayer = CAShapeLayer()
+            plusLayer.lineCap = kCALineCapRound
+            plusLayer.strokeColor = UIColor.white.cgColor
+            plusLayer.lineWidth = 3.0
+            
+            let w = frame.width
+            let h = frame.height
+            
+            let points = [
+                (CGPoint(x: w * 0.25, y: h * 0.35), CGPoint(x: w * 0.75, y: h * 0.35)),
+                (CGPoint(x: w * 0.25, y: h * 0.5), CGPoint(x: w * 0.75, y: h * 0.5)),
+                (CGPoint(x: w * 0.25, y: h * 0.65), CGPoint(x: w * 0.75, y: h * 0.65))
+            ]
+            
+            let path = UIBezierPath()
+            for (start, end) in points {
+                path.move(to: start)
+                path.addLine(to: end)
+            }
+            
+            plusLayer.path = path.cgPath
+            
+            return plusLayer
+        }
+    }
+    
+
+        
+        var cells: [LiquidFloatingCell] = []
+        var floatingActionButton: LiquidFloatingActionButton!
+        
+        func setupMaterial() {
+   
+            
+            //        self.view.backgroundColor = UIColor(red: 55 / 255.0, green: 55 / 255.0, blue: 55 / 255.0, alpha: 1.0)
+            // Do any additional setup after loading the view, typically from a nib.
+            let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
+                let floatingActionButton = CustomDrawingActionButton(frame: frame)
+                floatingActionButton.animateStyle = style
+                floatingActionButton.dataSource = self
+                floatingActionButton.delegate = self
+                return floatingActionButton
+            }
+            
+            let cellFactory: (String) -> LiquidFloatingCell = { (iconName) in
+                let cell = LiquidFloatingCell(icon: UIImage(named: iconName)!)
+                return cell
+            }
+            let customCellFactory: (String) -> LiquidFloatingCell = { (iconName) in
+                let cell = CustomCell(icon: UIImage(named: iconName)!, name: iconName)
+                return cell
+            }
+            cells.append(cellFactory("icons8-Sent Filled-50"))
+            cells.append(cellFactory("icons8-Sent Filled-50"))
+            cells.append(cellFactory("icons8-Sent Filled-50"))
+            
+            let floatingFrame = CGRect(x: self.view.frame.width - 56 - 16, y: self.view.frame.height - 56 - 16, width: 56, height: 56)
+            let bottomRightButton = createButton(floatingFrame, .left)
+            
+            let image = UIImage(named: "icons8-Add-50-2")
+            bottomRightButton.image = image
+            bottomRightButton.color = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
+
+            
+            self.view.addSubview(bottomRightButton)
+
+        }
+        
+        func numberOfCells(_ liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
+            return cells.count
+        }
+        
+        func cellForIndex(_ index: Int) -> LiquidFloatingCell {
+            return cells[index]
+        }
+        
+        func liquidFloatingActionButton(_ liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
+            print("did Tapped! \(index)")
+            liquidFloatingActionButton.close()
+        }
+
 
 }
+
+
+//Material Button
+//extension MainViewController  {
+//    
+//}
