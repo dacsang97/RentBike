@@ -12,6 +12,7 @@ target 'RentBi' do
   pod 'LiquidFloatingActionButton', :git => 'https://github.com/yoavlt/LiquidFloatingActionButton.git'
   pod 'SnapKit', '~> 3.2.0'
   pod 'SwiftIconFont'
+  pod 'Pulley'
 
 
   target 'RentBiTests' do

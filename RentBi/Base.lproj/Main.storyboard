@@ -78,7 +78,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="j1A-G5-K0d" secondAttribute="trailing" constant="16" id="Vmb-C5-ZdD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="j1A-G5-K0d" secondAttribute="bottom" constant="90" id="2fX-rD-3XY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="j1A-G5-K0d" secondAttribute="trailing" id="MYg-QJ-Eqw"/>
-                            <constraint firstItem="Zp0-TH-AAm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MgT-2g-f0H"/>
                             <constraint firstItem="Zp0-TH-AAm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZnE-jT-M8w"/>
                             <constraint firstAttribute="trailing" secondItem="Zp0-TH-AAm" secondAttribute="trailing" id="pI3-b7-XbD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zp0-TH-AAm" secondAttribute="bottom" id="vtf-9f-oEL"/>
