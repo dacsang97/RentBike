@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		046F22031EFE48F7002756F3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F22021EFE48F7002756F3 /* MainViewController.swift */; };
+		0FA23C68FC5605395C4689CA /* Pods_RentBi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EEBB96F88E9083604580B7 /* Pods_RentBi.framework */; };
 		7FA976DE1EFE44CB00DF2778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA976DD1EFE44CB00DF2778 /* AppDelegate.swift */; };
-		7FA976E01EFE44CB00DF2778 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA976DF1EFE44CB00DF2778 /* ViewController.swift */; };
 		7FA976E31EFE44CC00DF2778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA976E11EFE44CC00DF2778 /* Main.storyboard */; };
 		7FA976E51EFE44CC00DF2778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FA976E41EFE44CC00DF2778 /* Assets.xcassets */; };
 		7FA976E81EFE44CC00DF2778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA976E61EFE44CC00DF2778 /* LaunchScreen.storyboard */; };
 		7FA976F31EFE44CC00DF2778 /* RentBiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA976F21EFE44CC00DF2778 /* RentBiTests.swift */; };
 		7FA976FE1EFE44CC00DF2778 /* RentBiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA976FD1EFE44CC00DF2778 /* RentBiUITests.swift */; };
+		FAFDEA708FDC115AD105A481 /* Pods_RentBiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269CDF99381D5757C1169FEF /* Pods_RentBiUITests.framework */; };
+		FCCA67EB6E737B8A15C6DB8D /* Pods_RentBiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383794919B47CFC905794041 /* Pods_RentBiTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +37,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		046F22021EFE48F7002756F3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewController/MainViewController.swift; sourceTree = "<group>"; };
+		0D6D7A768F484AC53CDCD861 /* Pods-RentBi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RentBi.release.xcconfig"; path = "Pods/Target Support Files/Pods-RentBi/Pods-RentBi.release.xcconfig"; sourceTree = "<group>"; };
+		14B1A40120C26A2F29492E57 /* Pods-RentBiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RentBiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RentBiTests/Pods-RentBiTests.release.xcconfig"; sourceTree = "<group>"; };
+		1BD6F361353B906B24C33363 /* Pods-RentBiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RentBiUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RentBiUITests/Pods-RentBiUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		269CDF99381D5757C1169FEF /* Pods_RentBiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RentBiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30E2C008559C209B86387E59 /* Pods-RentBiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RentBiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RentBiUITests/Pods-RentBiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		383794919B47CFC905794041 /* Pods_RentBiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RentBiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA976DA1EFE44CB00DF2778 /* RentBi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RentBi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA976DD1EFE44CB00DF2778 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7FA976DF1EFE44CB00DF2778 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7FA976E21EFE44CC00DF2778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7FA976E41EFE44CC00DF2778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FA976E71EFE44CC00DF2778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +56,9 @@
 		7FA976F91EFE44CC00DF2778 /* RentBiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RentBiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA976FD1EFE44CC00DF2778 /* RentBiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentBiUITests.swift; sourceTree = "<group>"; };
 		7FA976FF1EFE44CC00DF2778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		983D1501C00A129208669530 /* Pods-RentBiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RentBiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RentBiTests/Pods-RentBiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A33CB5271EE8627E083C27EA /* Pods-RentBi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RentBi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RentBi/Pods-RentBi.debug.xcconfig"; sourceTree = "<group>"; };
+		B7EEBB96F88E9083604580B7 /* Pods_RentBi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RentBi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA23C68FC5605395C4689CA /* Pods_RentBi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCA67EB6E737B8A15C6DB8D /* Pods_RentBiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAFDEA708FDC115AD105A481 /* Pods_RentBiUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		046F22011EFE48DD002756F3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				046F22021EFE48F7002756F3 /* MainViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		046F22041EFE49CA002756F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		58A7C092B584207C7A5F532F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7EEBB96F88E9083604580B7 /* Pods_RentBi.framework */,
+				383794919B47CFC905794041 /* Pods_RentBiTests.framework */,
+				269CDF99381D5757C1169FEF /* Pods_RentBiUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7FA976D11EFE44CB00DF2778 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +121,8 @@
 				7FA976F11EFE44CC00DF2778 /* RentBiTests */,
 				7FA976FC1EFE44CC00DF2778 /* RentBiUITests */,
 				7FA976DB1EFE44CB00DF2778 /* Products */,
+				9CF432CC40F9BC5743C61578 /* Pods */,
+				58A7C092B584207C7A5F532F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +139,9 @@
 		7FA976DC1EFE44CB00DF2778 /* RentBi */ = {
 			isa = PBXGroup;
 			children = (
+				046F22041EFE49CA002756F3 /* Model */,
+				046F22011EFE48DD002756F3 /* ViewController */,
 				7FA976DD1EFE44CB00DF2778 /* AppDelegate.swift */,
-				7FA976DF1EFE44CB00DF2778 /* ViewController.swift */,
 				7FA976E11EFE44CC00DF2778 /* Main.storyboard */,
 				7FA976E41EFE44CC00DF2778 /* Assets.xcassets */,
 				7FA976E61EFE44CC00DF2778 /* LaunchScreen.storyboard */,
@@ -125,6 +168,19 @@
 			path = RentBiUITests;
 			sourceTree = "<group>";
 		};
+		9CF432CC40F9BC5743C61578 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A33CB5271EE8627E083C27EA /* Pods-RentBi.debug.xcconfig */,
+				0D6D7A768F484AC53CDCD861 /* Pods-RentBi.release.xcconfig */,
+				983D1501C00A129208669530 /* Pods-RentBiTests.debug.xcconfig */,
+				14B1A40120C26A2F29492E57 /* Pods-RentBiTests.release.xcconfig */,
+				1BD6F361353B906B24C33363 /* Pods-RentBiUITests.debug.xcconfig */,
+				30E2C008559C209B86387E59 /* Pods-RentBiUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FA977021EFE44CC00DF2778 /* Build configuration list for PBXNativeTarget "RentBi" */;
 			buildPhases = (
+				2C2B457417229578794CD5A2 /* [CP] Check Pods Manifest.lock */,
 				7FA976D61EFE44CB00DF2778 /* Sources */,
 				7FA976D71EFE44CB00DF2778 /* Frameworks */,
 				7FA976D81EFE44CB00DF2778 /* Resources */,
+				308682BA09FB2FA6F9885F0A /* [CP] Embed Pods Frameworks */,
+				34435BE4F8A6CEA3B60C7C57 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FA977051EFE44CC00DF2778 /* Build configuration list for PBXNativeTarget "RentBiTests" */;
 			buildPhases = (
+				074BC8118ABE1F9769F1D0A2 /* [CP] Check Pods Manifest.lock */,
 				7FA976EA1EFE44CC00DF2778 /* Sources */,
 				7FA976EB1EFE44CC00DF2778 /* Frameworks */,
 				7FA976EC1EFE44CC00DF2778 /* Resources */,
+				5254F4DE26B936B5BF3E4E53 /* [CP] Embed Pods Frameworks */,
+				42395C9F0A290D63F425C8D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +229,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FA977081EFE44CC00DF2778 /* Build configuration list for PBXNativeTarget "RentBiUITests" */;
 			buildPhases = (
+				8D1C472D9579973246132A61 /* [CP] Check Pods Manifest.lock */,
 				7FA976F51EFE44CC00DF2778 /* Sources */,
 				7FA976F61EFE44CC00DF2778 /* Frameworks */,
 				7FA976F71EFE44CC00DF2778 /* Resources */,
+				C691DC9252C7C3719A96ADC6 /* [CP] Embed Pods Frameworks */,
+				C2ACAE6E27EE6D5D76B37776 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +258,7 @@
 				TargetAttributes = {
 					7FA976D91EFE44CB00DF2778 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = FAZH6E59JU;
 						ProvisioningStyle = Automatic;
 					};
 					7FA976ED1EFE44CC00DF2778 = {
@@ -254,13 +320,151 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		074BC8118ABE1F9769F1D0A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2C2B457417229578794CD5A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		308682BA09FB2FA6F9885F0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RentBi/Pods-RentBi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34435BE4F8A6CEA3B60C7C57 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RentBi/Pods-RentBi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42395C9F0A290D63F425C8D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RentBiTests/Pods-RentBiTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5254F4DE26B936B5BF3E4E53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RentBiTests/Pods-RentBiTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D1C472D9579973246132A61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C2ACAE6E27EE6D5D76B37776 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RentBiUITests/Pods-RentBiUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C691DC9252C7C3719A96ADC6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RentBiUITests/Pods-RentBiUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7FA976D61EFE44CB00DF2778 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FA976E01EFE44CB00DF2778 /* ViewController.swift in Sources */,
 				7FA976DE1EFE44CB00DF2778 /* AppDelegate.swift in Sources */,
+				046F22031EFE48F7002756F3 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,8 +616,10 @@
 		};
 		7FA977031EFE44CC00DF2778 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A33CB5271EE8627E083C27EA /* Pods-RentBi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FAZH6E59JU;
 				INFOPLIST_FILE = RentBi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = info.vteam.RentBi;
@@ -424,8 +630,10 @@
 		};
 		7FA977041EFE44CC00DF2778 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D6D7A768F484AC53CDCD861 /* Pods-RentBi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FAZH6E59JU;
 				INFOPLIST_FILE = RentBi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = info.vteam.RentBi;
@@ -436,6 +644,7 @@
 		};
 		7FA977061EFE44CC00DF2778 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 983D1501C00A129208669530 /* Pods-RentBiTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -450,6 +659,7 @@
 		};
 		7FA977071EFE44CC00DF2778 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14B1A40120C26A2F29492E57 /* Pods-RentBiTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -464,6 +674,7 @@
 		};
 		7FA977091EFE44CC00DF2778 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BD6F361353B906B24C33363 /* Pods-RentBiUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = RentBiUITests/Info.plist;
@@ -477,6 +688,7 @@
 		};
 		7FA9770A1EFE44CC00DF2778 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30E2C008559C209B86387E59 /* Pods-RentBiUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = RentBiUITests/Info.plist;
@@ -507,6 +719,7 @@
 				7FA977041EFE44CC00DF2778 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7FA977051EFE44CC00DF2778 /* Build configuration list for PBXNativeTarget "RentBiTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +728,7 @@
 				7FA977071EFE44CC00DF2778 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7FA977081EFE44CC00DF2778 /* Build configuration list for PBXNativeTarget "RentBiUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +737,7 @@
 				7FA9770A1EFE44CC00DF2778 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
