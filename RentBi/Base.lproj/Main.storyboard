@@ -24,28 +24,49 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zp0-TH-AAm" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pt-aS-awD">
-                                        <rect key="frame" x="307" y="53" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pt-aS-awD">
+                                        <rect key="frame" x="320" y="60" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="6OL-Zr-xDy"/>
+                                            <constraint firstAttribute="height" constant="35" id="Mnu-kD-38o"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="icons8-Sent Filled-50"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyR-zX-eMQ">
-                                        <rect key="frame" x="307" y="116" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyR-zX-eMQ">
+                                        <rect key="frame" x="320" y="120" width="35" height="35"/>
+                                        <state key="normal" backgroundImage="icons8-Sent Filled-50"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1A-G5-K0d">
-                                        <rect key="frame" x="307" y="154" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oh-Xh-obR">
+                                        <rect key="frame" x="320" y="572" width="35" height="35"/>
+                                        <state key="normal" backgroundImage="icons8-Sent Filled-50"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oh-Xh-obR">
-                                        <rect key="frame" x="307" y="192" width="46" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1A-G5-K0d">
+                                        <rect key="frame" x="320" y="180" width="35" height="35"/>
+                                        <state key="normal" backgroundImage="icons8-Sent Filled-50"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="0Oh-Xh-obR" firstAttribute="height" secondItem="j1A-G5-K0d" secondAttribute="height" id="46V-V2-fUu"/>
+                                    <constraint firstItem="0Oh-Xh-obR" firstAttribute="trailing" secondItem="j1A-G5-K0d" secondAttribute="trailing" id="6Iz-j2-vPD"/>
+                                    <constraint firstItem="j1A-G5-K0d" firstAttribute="top" secondItem="wyR-zX-eMQ" secondAttribute="bottom" constant="25" id="Dgh-xR-zOW"/>
+                                    <constraint firstItem="wyR-zX-eMQ" firstAttribute="width" secondItem="6Pt-aS-awD" secondAttribute="width" id="OxV-F8-0Io"/>
+                                    <constraint firstItem="wyR-zX-eMQ" firstAttribute="trailing" secondItem="6Pt-aS-awD" secondAttribute="trailing" id="QU4-T8-f6S"/>
+                                    <constraint firstItem="j1A-G5-K0d" firstAttribute="height" secondItem="wyR-zX-eMQ" secondAttribute="height" id="SvO-VE-DKx"/>
+                                    <constraint firstItem="j1A-G5-K0d" firstAttribute="width" secondItem="wyR-zX-eMQ" secondAttribute="width" id="avy-Ls-mgA"/>
+                                    <constraint firstItem="wyR-zX-eMQ" firstAttribute="height" secondItem="6Pt-aS-awD" secondAttribute="height" id="cJt-kj-MiK"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Pt-aS-awD" secondAttribute="trailing" constant="20" id="g5q-WN-7SK"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Oh-Xh-obR" secondAttribute="bottom" constant="60" id="gAA-As-06m"/>
+                                    <constraint firstItem="wyR-zX-eMQ" firstAttribute="top" secondItem="6Pt-aS-awD" secondAttribute="bottom" constant="25" id="t3N-JL-p58"/>
+                                    <constraint firstItem="0Oh-Xh-obR" firstAttribute="width" secondItem="j1A-G5-K0d" secondAttribute="width" id="wN8-rT-Z4z"/>
+                                    <constraint firstItem="j1A-G5-K0d" firstAttribute="trailing" secondItem="wyR-zX-eMQ" secondAttribute="trailing" id="wfA-X7-qI6"/>
+                                    <constraint firstItem="6Pt-aS-awD" firstAttribute="top" secondItem="Zp0-TH-AAm" secondAttribute="top" constant="60" id="xzz-xL-3fN"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vKm-fr-SKd">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,7 +78,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnView" destination="vKm-fr-SKd" id="px2-Zg-TPx"/>
                         <outlet property="mapView" destination="Zp0-TH-AAm" id="1Tj-5i-5wd"/>
+                        <outletCollection property="btnOutlet" destination="j1A-G5-K0d" collectionClass="NSMutableArray" id="B5E-RJ-e8h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -65,4 +88,7 @@
             <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-Sent Filled-50" width="25" height="25"/>
+    </resources>
 </document>
