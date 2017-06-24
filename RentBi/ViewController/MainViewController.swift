@@ -13,38 +13,35 @@ class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
 
     @IBOutlet var btnView: UIView!
     @IBOutlet var mapView: GMSMapView!
+    @IBOutlet var btnOutlet: [UIButton]!
     var locationManager = CLLocationManager()
     
+    @IBOutlet var btnUserLocation: UIButton!
+    @IBOutlet var btnParking: UIButton!
+    @IBOutlet var btnRentBike: UIButton!
+    @IBOutlet var btnGasStation: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 13.0)
-        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+     //   let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 13.0)
+       // mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         // User Location
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
-        
+
+     
         self.view.insertSubview(mapView, at: 0)
-        self.view.bringSubview(toFront: btnView)
         self.view.insertSubview(btnView, at: 1)
-        for btn in btnOutlet {
-           // self.view.insertSubview(btn, at: 1)
-            
-        }
-        
+        btnUserLocation.layer.cornerRadius = 20
+        btnGasStation.layer.cornerRadius = 20
+        btnParking.layer.cornerRadius = 20
+        btnRentBike.layer.cornerRadius = 20
 
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.view.insertSubview(mapView, at: 0)
-        self.view.bringSubview(toFront: btnView)
-        for btn in btnOutlet {
-            btn.layer.cornerRadius = 20
-          //  self.view.insertSubview(btn, at: 1)
-            
-        }
         
         
     }
@@ -63,7 +60,7 @@ class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
 //        
 //    }
     
-    @IBOutlet var btnOutlet: [UIButton]!
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation = locations.last
@@ -71,9 +68,10 @@ class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
         
         let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude,
                                               longitude: userLocation!.coordinate.longitude, zoom: 13.0)
-        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+       // mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView.camera = camera
         mapView.isMyLocationEnabled = true
-        self.view = mapView
+        //self.view = mapView
         
         locationManager.stopUpdatingLocation()
         

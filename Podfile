@@ -8,6 +8,7 @@ target 'RentBi' do
   # Pods for RentBi
 	 pod 'GoogleMaps'
   pod 'GooglePlaces'
+pod "LiquidFloatingActionButton"
 
   target 'RentBiTests' do
     inherit! :search_paths
