@@ -26,22 +26,37 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1A-G5-K0d">
-                                <rect key="frame" x="287" y="521" width="56" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1A-G5-K0d" customClass="FABButton" customModule="Material">
+                                <rect key="frame" x="303" y="521" width="56" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="HPX-7J-naB"/>
                                     <constraint firstAttribute="height" constant="56" id="tIs-hZ-GI0"/>
                                 </constraints>
                                 <state key="normal" image="icons8-Crosshair-50"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="pulseColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isShadowPathAutoSizing" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="invokeCurrentLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m1J-zP-WNw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="j1A-G5-K0d" secondAttribute="bottom" constant="90" id="2fX-rD-3XY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j1A-G5-K0d" secondAttribute="trailing" id="MYg-QJ-Eqw"/>
                             <constraint firstItem="Zp0-TH-AAm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MgT-2g-f0H"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="j1A-G5-K0d" secondAttribute="trailing" constant="16" id="Vmb-C5-ZdD"/>
                             <constraint firstItem="Zp0-TH-AAm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZnE-jT-M8w"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="j1A-G5-K0d" secondAttribute="bottom" constant="90" id="ai3-IC-ZEm"/>
                             <constraint firstAttribute="trailing" secondItem="Zp0-TH-AAm" secondAttribute="trailing" id="pI3-b7-XbD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zp0-TH-AAm" secondAttribute="bottom" id="vtf-9f-oEL"/>
                         </constraints>

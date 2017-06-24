@@ -10,6 +10,7 @@ target 'RentBi' do
   pod 'GooglePlaces'
   pod 'LiquidFloatingActionButton', :git => 'https://github.com/yoavlt/LiquidFloatingActionButton.git'
 pod 'SnapKit', '~> 3.2.0'
+pod 'Material', '~> 2.0'
 
 
   target 'RentBiTests' do

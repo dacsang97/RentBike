@@ -10,6 +10,12 @@ import UIKit
 import GoogleMaps
 import LiquidFloatingActionButton
 import SnapKit
+import Material
+struct ButtonLayout {
+    struct Fab {
+        static let diameter: CGFloat = 48
+    }
+}
 
 class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationManagerDelegate , LiquidFloatingActionButtonDataSource , LiquidFloatingActionButtonDelegate {
 
@@ -26,25 +32,36 @@ class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
      //   let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 13.0)
        // mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         // User Location
+        
+
+//        btnUserLocation.layer.cornerRadius = 0.5 * btnUserLocation.bounds.size.width
+//        btnUserLocation.clipsToBounds = true
+   
+        setupLocationManager()
+        setupMaterial()
+        prepareFABButton()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    func prepareFABButton() {
+       
+      //  btnUserLocation = FABButton(image: UIImage(named: <#T##String#>), tintColor: <#T##UIColor#>)
+        btnUserLocation.backgroundColor = Color.white
+ 
+    }
+       
+    func setupLocationManager(){
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
-
-        btnUserLocation.layer.cornerRadius = 20
-   
-        
-        setupMaterial()
-
-        // Do any additional setup after loading the view.
     }
-       
-
     
-    
+    var userLocation : CLLocation!
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation = locations.last
+        userLocation = locations.last
         let center = CLLocationCoordinate2D(latitude: userLocation!.coordinate.latitude, longitude: userLocation!.coordinate.longitude)
         
         let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude,
@@ -55,12 +72,20 @@ class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
         //self.view = mapView
         
         locationManager.stopUpdatingLocation()
-        
-        
+   
         
     }
 
     
+    @IBAction func invokeCurrentLocation(_ sender: Any) {
+        let center = CLLocationCoordinate2D(latitude: userLocation!.coordinate.latitude, longitude: userLocation!.coordinate.longitude)
+        
+        let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude,
+                                              longitude: userLocation!.coordinate.longitude, zoom: 13.0)
+        // mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView.camera = camera
+        mapView.isMyLocationEnabled = true
+    }
 
     /*
     // MARK: - Navigation
@@ -155,14 +180,14 @@ class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
                 let cell = CustomCell(icon: UIImage(named: iconName)!, name: iconName)
                 return cell
             }
-            cells.append(cellFactory("icons8-Sent Filled-50"))
-            cells.append(cellFactory("icons8-Sent Filled-50"))
-            cells.append(cellFactory("icons8-Sent Filled-50"))
+            cells.append(cellFactory("iconden-5"))
+            cells.append(cellFactory("iconden-4"))
+            cells.append(cellFactory("iconden-3"))
             
             let floatingFrame = CGRect(x: self.view.frame.width - 56 - 16, y: self.view.frame.height - 56 - 16, width: 56, height: 56)
             let bottomRightButton = createButton(floatingFrame, .left)
             
-            let image = UIImage(named: "icons8-Add-50-2")
+            let image = UIImage(named: "iconden-2")
             bottomRightButton.image = image
             bottomRightButton.color = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
 
