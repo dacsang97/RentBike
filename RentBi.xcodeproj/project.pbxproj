@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		046F22031EFE48F7002756F3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F22021EFE48F7002756F3 /* MainViewController.swift */; };
 		0FA23C68FC5605395C4689CA /* Pods_RentBi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EEBB96F88E9083604580B7 /* Pods_RentBi.framework */; };
+		49AC1AF01EFE8056006BE90A /* MainNavigatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC1AEF1EFE8056006BE90A /* MainNavigatorViewController.swift */; };
+		49AC1AF21EFE8119006BE90A /* DrawerNavigatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC1AF11EFE8119006BE90A /* DrawerNavigatorViewController.swift */; };
 		7FA976DE1EFE44CB00DF2778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA976DD1EFE44CB00DF2778 /* AppDelegate.swift */; };
 		7FA976E31EFE44CC00DF2778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA976E11EFE44CC00DF2778 /* Main.storyboard */; };
 		7FA976E51EFE44CC00DF2778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FA976E41EFE44CC00DF2778 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		269CDF99381D5757C1169FEF /* Pods_RentBiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RentBiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E2C008559C209B86387E59 /* Pods-RentBiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RentBiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RentBiUITests/Pods-RentBiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		383794919B47CFC905794041 /* Pods_RentBiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RentBiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49AC1AEF1EFE8056006BE90A /* MainNavigatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigatorViewController.swift; sourceTree = "<group>"; };
+		49AC1AF11EFE8119006BE90A /* DrawerNavigatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerNavigatorViewController.swift; sourceTree = "<group>"; };
 		7FA976DA1EFE44CB00DF2778 /* RentBi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RentBi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA976DD1EFE44CB00DF2778 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FA976E21EFE44CC00DF2778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				046F22021EFE48F7002756F3 /* MainViewController.swift */,
+				49AC1AEF1EFE8056006BE90A /* MainNavigatorViewController.swift */,
+				49AC1AF11EFE8119006BE90A /* DrawerNavigatorViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -464,6 +470,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FA976DE1EFE44CB00DF2778 /* AppDelegate.swift in Sources */,
+				49AC1AF21EFE8119006BE90A /* DrawerNavigatorViewController.swift in Sources */,
+				49AC1AF01EFE8056006BE90A /* MainNavigatorViewController.swift in Sources */,
 				046F22031EFE48F7002756F3 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

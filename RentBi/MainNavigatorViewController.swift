@@ -6,4 +6,14 @@
 //  Copyright © 2017 vteam. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class MainNavigatorViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+}
