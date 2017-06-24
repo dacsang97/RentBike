@@ -6,8 +6,9 @@ target 'RentBi' do
   use_frameworks!
 
   # Pods for RentBi
-	 pod 'GoogleMaps'
+  pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'Material', '~> 2.0'
 
   target 'RentBiTests' do
     inherit! :search_paths
