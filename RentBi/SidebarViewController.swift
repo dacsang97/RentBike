@@ -1,5 +1,5 @@
 //
-//  LeftSidebarViewController.swift
+//  SidebarViewController.swift
 //  RentBi
 //
 //  Created by Nguyen Le Vu Long on 6/24/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LeftSidebarViewController: UIViewController {
+class SidebarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

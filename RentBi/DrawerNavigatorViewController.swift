@@ -31,7 +31,7 @@
 import UIKit
 import Material
 
-class AppNavigationDrawerController: NavigationDrawerController {
+class DrawerNavigatorViewController: NavigationDrawerController {
     open override func prepare() {
         super.prepare()
         
@@ -39,7 +39,7 @@ class AppNavigationDrawerController: NavigationDrawerController {
     }
 }
 
-extension AppNavigationDrawerController: NavigationDrawerControllerDelegate {
+extension DrawerNavigatorViewController: NavigationDrawerControllerDelegate {
     func navigationDrawerController(navigationDrawerController: NavigationDrawerController, willOpen position: NavigationDrawerPosition) {
         print("navigationDrawerController willOpen")
     }

@@ -98,6 +98,42 @@
             </objects>
             <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>
+        <!--Fake View Controller-->
+        <scene sceneID="Ees-jL-EKU">
+            <objects>
+                <viewController storyboardIdentifier="FakeViewController" id="twl-yE-Rha" customClass="FakeViewController" customModule="RentBi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NiR-jy-azb"/>
+                        <viewControllerLayoutGuide type="bottom" id="MfL-NE-Inn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Bw-AL-lUS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.69653694535471111" green="1" blue="0.54586839490432704" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85n-fv-z7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121" y="779"/>
+        </scene>
+        <!--Sidebar View Controller-->
+        <scene sceneID="erq-cu-auq">
+            <objects>
+                <viewController storyboardIdentifier="SidebarViewController" id="l3U-zy-uFH" customClass="SidebarViewController" customModule="RentBi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eif-ox-ycO"/>
+                        <viewControllerLayoutGuide type="bottom" id="2oF-k4-bzT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qk1-cj-hyQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.39853090311611172" blue="0.16627096093990279" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XkU-QN-GwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="139"/>
+        </scene>
         <!--Main Navigator View Controller-->
         <scene sceneID="Kwn-2c-ozc">
             <objects>

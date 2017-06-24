@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainNavigatorViewController: UIViewController {
+class FakeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
