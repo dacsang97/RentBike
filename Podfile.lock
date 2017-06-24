@@ -6,20 +6,46 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.3.1):
     - GoogleMaps/Base (= 2.3.1)
+<<<<<<< HEAD
   - Material (2.6.3):
     - Material/Core (= 2.6.3)
   - Material/Core (2.6.3)
+=======
+  - LiquidFloatingActionButton (2.0.0)
+  - SnapKit (3.2.0)
+>>>>>>> b6e9fd43785763cb318f02c13d11c491e877a99f
 
 DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
+<<<<<<< HEAD
   - Material (~> 2.0)
+=======
+  - LiquidFloatingActionButton (from `https://github.com/yoavlt/LiquidFloatingActionButton.git`)
+  - SnapKit (~> 3.2.0)
+
+EXTERNAL SOURCES:
+  LiquidFloatingActionButton:
+    :git: https://github.com/yoavlt/LiquidFloatingActionButton.git
+
+CHECKOUT OPTIONS:
+  LiquidFloatingActionButton:
+    :commit: 5fecfa1de61e64f2f3a521a82981dd0bad2c5904
+    :git: https://github.com/yoavlt/LiquidFloatingActionButton.git
+>>>>>>> b6e9fd43785763cb318f02c13d11c491e877a99f
 
 SPEC CHECKSUMS:
   GoogleMaps: c66a71058b9b1294bcdd5463a68e357fa50c079f
   GooglePlaces: 4a7b22debfa1af65017b82943431822607e45201
+<<<<<<< HEAD
   Material: af607a7ec0e9978ef85cf189a3d8ceeeb650400f
 
 PODFILE CHECKSUM: 3065bb664233d94f816d097315a1ee4a60618eeb
+=======
+  LiquidFloatingActionButton: 61496c787627103ccb3a23d4dea71faef4a84d4d
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+
+PODFILE CHECKSUM: 75f616e77b68c9ac70484dd992ad8156302d2f9e
+>>>>>>> b6e9fd43785763cb318f02c13d11c491e877a99f
 
 COCOAPODS: 1.2.1
