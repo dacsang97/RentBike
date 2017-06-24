@@ -36,6 +36,7 @@ class DrawerNavigatorViewController: NavigationDrawerController {
         super.prepare()
         
         delegate = self
+        setLeftViewWidth(width: Screen.width * 0.4, isHidden: true, animated: true)
     }
 }
 
