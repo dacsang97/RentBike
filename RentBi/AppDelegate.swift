@@ -20,8 +20,8 @@ extension UIStoryboard {
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var rootViewController: MainViewController = {
-        return UIStoryboard.viewController(identifier: "MainViewController") as! MainViewController
+    var rootViewController: MainPulleyViewController = {
+        return UIStoryboard.viewController(identifier: "MainPulleyViewController") as! MainPulleyViewController
     }()
 //    var rootViewController: FakeViewController = {
 //        return UIStoryboard.viewController(identifier: "FakeViewController") as! FakeViewController

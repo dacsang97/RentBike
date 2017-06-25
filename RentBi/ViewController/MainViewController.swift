@@ -1,11 +1,3 @@
-//
-//  MainViewController.swift
-//  RentBi
-//
-//  Created by mac on 6/24/17.
-//  Copyright © 2017 vteam. All rights reserved.
-//
-
 import UIKit
 import GoogleMaps
 import LiquidFloatingActionButton
@@ -18,38 +10,54 @@ struct ButtonLayout {
     }
 }
 
-class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationManagerDelegate , LiquidFloatingActionButtonDataSource , LiquidFloatingActionButtonDelegate {
-
-
-    @IBOutlet var mapView: GMSMapView!
-  
-    var locationManager = CLLocationManager()
+class MainViewController: UIViewController, CLLocationManagerDelegate {
+    var cells: [LiquidFloatingCell] = []
+    var floatingActionButton: LiquidFloatingActionButton!
     
+    @IBOutlet var mapView: GMSMapView!
     @IBOutlet var btnUserLocation: UIButton!
+    var locationManager = CLLocationManager()
+    var userLocation : CLLocation!
+    
+    var delegate: MainPulleyViewController?
+    var shops: [Shop] = []
+    var markers: [CustomMarker] = []
+    var filterSetting = [ "park": true, "gas": true, "rent": true ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-     //   let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 13.0)
-       // mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        // User Location
-        
-
-//        btnUserLocation.layer.cornerRadius = 0.5 * btnUserLocation.bounds.size.width
-//        btnUserLocation.clipsToBounds = true
    
+        mapView.delegate = self
         setupLocationManager()
         setupMaterial()
         prepareFABButton()
-
-        // Do any additional setup after loading the view.
+        API.getNearbyShops(x: 0, y: 0) { shops in
+            self.shops = shops
+            for shop in shops {
+//                print("\(shop.x) \(shop.y)")
+                let marker = CustomMarker(position: CLLocationCoordinate2D(latitude: shop.y, longitude: shop.x))
+                switch shop.type {
+                case "park": marker.icon = UIImage(named: "icon-marker-park")
+                case "rent": marker.icon = UIImage(named: "icon-marker-rent")
+                case "gas": marker.icon = UIImage(named: "icon-marker-gas")
+                default: break
+                }
+                marker.shop = shop
+                marker.map = self.mapView
+                self.markers.append(marker)
+            }
+            self.updateMarkersVisibility()
+        }
     }
     
-    func prepareFABButton() {
-       
-      //  btnUserLocation = FABButton(image: UIImage(named: <#T##String#>), tintColor: <#T##UIColor#>)
-        btnUserLocation.backgroundColor = Color.white
- 
+    fileprivate func updateMarkersVisibility() {
+        for marker in markers {
+            if filterSetting[marker.shop.type] == true {
+                marker.opacity = 1
+            } else {
+                marker.opacity = 0
+            }
+        }
     }
        
     func setupLocationManager(){
@@ -59,75 +67,47 @@ class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
         locationManager.startUpdatingLocation()
     }
     
-    var userLocation : CLLocation!
+    private func resetCamera() {
+        let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude, longitude: userLocation!.coordinate.longitude, zoom: 14.0)
+        mapView.camera = camera
+        mapView.isMyLocationEnabled = true
+    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         userLocation = locations.last
-        
-        let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude,
-                                              longitude: userLocation!.coordinate.longitude, zoom: 13.0)
-       // mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.camera = camera
-        mapView.isMyLocationEnabled = true
-        //self.view = mapView
-        
+        resetCamera()
+//        print("\(userLocation!.coordinate.latitude) \(userLocation!.coordinate.longitude)")
         locationManager.stopUpdatingLocation()
-   
-        
     }
-
     
     @IBAction func invokeCurrentLocation(_ sender: Any) {
-        let center = CLLocationCoordinate2D(latitude: userLocation!.coordinate.latitude, longitude: userLocation!.coordinate.longitude)
-        
-        let camera = GMSCameraPosition.camera(withLatitude: userLocation!.coordinate.latitude,
-                                              longitude: userLocation!.coordinate.longitude, zoom: 13.0)
-        // mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.camera = camera
-        mapView.isMyLocationEnabled = true
+        resetCamera()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func ToggleMenu(_ sender: UIButton) {
+        navigationDrawerController?.toggleLeftView()
     }
-    */
-    
-    public class CustomCell : LiquidFloatingCell {
-        var name: String = "sample"
-        
-        init(icon: UIImage, name: String) {
-            self.name = name
-            super.init(icon: icon)
+}
+
+extension MainViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        if let marker = marker as? CustomMarker {
+            let shop = marker.shop
+            delegate?.onShopSelected(shop!)
         }
-        
-        required public init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-        
-        public override func setupView(_ view: UIView) {
-            super.setupView(view)
-            let label = UILabel()
-            label.text = name
-            label.textColor = UIColor.white
-            label.font = UIFont(name: "Helvetica-Neue", size: 12)
-            addSubview(label)
-            label.snp.makeConstraints { make in
-                make.left.equalTo(self).offset(-80)
-                make.width.equalTo(75)
-                make.top.height.equalTo(self)
-            }
-        }
+        return true
+    }
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        delegate?.onShopDeselected()
+    }
+}
+
+extension MainViewController: LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate {
+    func prepareFABButton() {
+        btnUserLocation.backgroundColor = Color.white
     }
     
     public class CustomDrawingActionButton: LiquidFloatingActionButton {
-        
         override public func createPlusLayer(_ frame: CGRect) -> CAShapeLayer {
-            
             let plusLayer = CAShapeLayer()
             plusLayer.lineCap = kCALineCapRound
             plusLayer.strokeColor = UIColor.white.cgColor
@@ -154,69 +134,56 @@ class MainViewController: UIViewController , GMSMapViewDelegate , CLLocationMana
         }
     }
     
-
-        
-        var cells: [LiquidFloatingCell] = []
-        var floatingActionButton: LiquidFloatingActionButton!
-        
-        func setupMaterial() {
-   
-            
-            //        self.view.backgroundColor = UIColor(red: 55 / 255.0, green: 55 / 255.0, blue: 55 / 255.0, alpha: 1.0)
-            // Do any additional setup after loading the view, typically from a nib.
-            let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
-                let floatingActionButton = CustomDrawingActionButton(frame: frame)
-                floatingActionButton.animateStyle = style
-                floatingActionButton.dataSource = self
-                floatingActionButton.delegate = self
-                return floatingActionButton
-            }
-            
-            let cellFactory: (String) -> LiquidFloatingCell = { (iconName) in
-                let cell = LiquidFloatingCell(icon: UIImage(named: iconName)!)
-                return cell
-            }
-            let customCellFactory: (String) -> LiquidFloatingCell = { (iconName) in
-                let cell = CustomCell(icon: UIImage(named: iconName)!, name: iconName)
-                return cell
-            }
-            cells.append(cellFactory("iconden-5"))
-            cells.append(cellFactory("iconden-4"))
-            cells.append(cellFactory("iconden-3"))
-            
-            let floatingFrame = CGRect(x: self.view.frame.width - 56 - 16, y: self.view.frame.height - 56 - 16, width: 56, height: 56)
-            let bottomRightButton = createButton(floatingFrame, .left)
-            
-            let image = UIImage(named: "iconden-2")
-            bottomRightButton.image = image
-            bottomRightButton.color = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
-
-            
-            self.view.addSubview(bottomRightButton)
-
+    func setupMaterial() {
+        let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
+            let floatingActionButton = CustomDrawingActionButton(frame: frame)
+            floatingActionButton.animateStyle = style
+            floatingActionButton.dataSource = self
+            floatingActionButton.delegate = self
+            floatingActionButton.rotationDegrees = 0.0
+            return floatingActionButton
         }
         
-        func numberOfCells(_ liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
-            return cells.count
+        let cellFactory: (String) -> LiquidFloatingCell = { (iconName) in
+            let cell = LiquidFloatingCell(icon: UIImage(named: iconName)!)
+            return cell
         }
+        cells.append(cellFactory("icon-rent"))
+        cells.append(cellFactory("icon-park"))
+        cells.append(cellFactory("icon-gas"))
         
-        func cellForIndex(_ index: Int) -> LiquidFloatingCell {
-            return cells[index]
-        }
+        let floatingFrame = CGRect(x: self.view.frame.width - 56 - 16, y: self.view.frame.height - 56 - 36, width: 56, height: 56)
+        let bottomRightButton = createButton(floatingFrame, .left)
         
-        func liquidFloatingActionButton(_ liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
-            print("did Tapped! \(index)")
-            liquidFloatingActionButton.close()
-        }
-
-    @IBAction func ToggleMenu(_ sender: UIButton) {
-        navigationDrawerController?.toggleLeftView()
+        let image = UIImage(named: "icon-filter")
+        bottomRightButton.image = image
+        bottomRightButton.color = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1)
+        
+        self.view.addSubview(bottomRightButton)
     }
-
+    func numberOfCells(_ liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
+        return cells.count
+    }
+    func cellForIndex(_ index: Int) -> LiquidFloatingCell {
+        return cells[index]
+    }
+    func liquidFloatingActionButton(_ liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
+        let cell = cells[index]
+        switch index {
+        case 0:
+            let bool = !filterSetting["rent"]!
+            filterSetting["rent"] = bool
+            cell.imageView.image = bool == true ? UIImage(named: "icon-rent") : UIImage(named: "icon-rent-disabled")
+        case 1:
+            let bool = !filterSetting["park"]!
+            filterSetting["park"] = bool
+            cell.imageView.image = bool == true ? UIImage(named: "icon-park") : UIImage(named: "icon-park-disabled")
+        case 2:
+            let bool = !filterSetting["gas"]!
+            filterSetting["gas"] = bool
+            cell.imageView.image = bool == true ? UIImage(named: "icon-gas") : UIImage(named: "icon-gas-disabled")
+        default: break
+        }
+        updateMarkersVisibility()
+    }
 }
-
-
-//Material Button
-//extension MainViewController  {
-//    
-//}

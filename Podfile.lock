@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.0)
   - GoogleMaps (2.3.1):
     - GoogleMaps/Maps (= 2.3.1)
   - GoogleMaps/Base (2.3.1)
@@ -13,8 +14,10 @@ PODS:
   - Pulley (1.4)
   - SnapKit (3.2.0)
   - SwiftIconFont (2.6.0)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Alamofire
   - GoogleMaps
   - GooglePlaces
   - LiquidFloatingActionButton (from `https://github.com/yoavlt/LiquidFloatingActionButton.git`)
@@ -22,6 +25,7 @@ DEPENDENCIES:
   - Pulley
   - SnapKit (~> 3.2.0)
   - SwiftIconFont
+  - SwiftyJSON
 
 EXTERNAL SOURCES:
   LiquidFloatingActionButton:
@@ -33,6 +37,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/yoavlt/LiquidFloatingActionButton.git
 
 SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   GoogleMaps: c66a71058b9b1294bcdd5463a68e357fa50c079f
   GooglePlaces: 4a7b22debfa1af65017b82943431822607e45201
   LiquidFloatingActionButton: 61496c787627103ccb3a23d4dea71faef4a84d4d
@@ -40,7 +45,8 @@ SPEC CHECKSUMS:
   Pulley: 3d47a5ca819b8f35a63e9a4811d35035d484d1d9
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftIconFont: bbe1f32e1e16bac87dad8566afc80132cb8d072c
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 971696e60d9a6c61ae9d0da01f657cd06c92d83f
+PODFILE CHECKSUM: c21fcdc8689a2be0d416d626343abf3edc3d516e
 
 COCOAPODS: 1.2.1
