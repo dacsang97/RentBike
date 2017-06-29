@@ -18,6 +18,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var btnUserLocation: UIButton!
     var locationManager = CLLocationManager()
     var userLocation : CLLocation!
+    var polyline: GMSPolyline?
     
     var delegate: MainPulleyViewController?
     var shops: [Shop] = []
@@ -92,12 +93,21 @@ extension MainViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         if let marker = marker as? CustomMarker {
             let shop = marker.shop
-            delegate?.onShopSelected(shop!)
+            delegate?.onShopSelected(shop!, userLocation!.coordinate.latitude, userLocation!.coordinate.longitude)
         }
         return true
     }
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         delegate?.onShopDeselected()
+    }
+    func drawPath(_ path: GMSMutablePath) {
+        polyline = GMSPolyline(path: path)
+        polyline?.strokeColor = .blue
+        polyline?.strokeWidth = 5.0
+        polyline?.map = mapView
+    }
+    func removePath() {
+        polyline?.map = nil
     }
 }
 

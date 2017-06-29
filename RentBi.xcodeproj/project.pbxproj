@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		046F22031EFE48F7002756F3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F22021EFE48F7002756F3 /* MainViewController.swift */; };
 		0FA23C68FC5605395C4689CA /* Pods_RentBi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EEBB96F88E9083604580B7 /* Pods_RentBi.framework */; };
+		491DBACC1F02D46200B7B5C2 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DBACB1F02D46200B7B5C2 /* Utilities.swift */; };
 		49212F131EFEE388005CD43B /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49212F121EFEE388005CD43B /* Shop.swift */; };
 		49212F151EFEE48C005CD43B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49212F141EFEE48C005CD43B /* API.swift */; };
 		492AFD881EFF2B0D001C0920 /* CustomMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492AFD871EFF2B0D001C0920 /* CustomMarker.swift */; };
@@ -52,6 +53,7 @@
 		269CDF99381D5757C1169FEF /* Pods_RentBiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RentBiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E2C008559C209B86387E59 /* Pods-RentBiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RentBiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RentBiUITests/Pods-RentBiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		383794919B47CFC905794041 /* Pods_RentBiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RentBiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		491DBACB1F02D46200B7B5C2 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		49212F121EFEE388005CD43B /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		49212F141EFEE48C005CD43B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		492AFD871EFF2B0D001C0920 /* CustomMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMarker.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				046F22041EFE49CA002756F3 /* Model */,
 				046F22011EFE48DD002756F3 /* ViewController */,
 				7FA976DD1EFE44CB00DF2778 /* AppDelegate.swift */,
+				491DBACB1F02D46200B7B5C2 /* Utilities.swift */,
 				7FA976E11EFE44CC00DF2778 /* Main.storyboard */,
 				7FA976E61EFE44CC00DF2778 /* LaunchScreen.storyboard */,
 				492AFD891EFF35C6001C0920 /* Assets.xcassets */,
@@ -489,6 +492,7 @@
 			files = (
 				49AC1AF41EFE857A006BE90A /* SidebarViewController.swift in Sources */,
 				7FA976DE1EFE44CB00DF2778 /* AppDelegate.swift in Sources */,
+				491DBACC1F02D46200B7B5C2 /* Utilities.swift in Sources */,
 				492AFD881EFF2B0D001C0920 /* CustomMarker.swift in Sources */,
 				49AC1AF21EFE8119006BE90A /* DrawerNavigatorViewController.swift in Sources */,
 				49AC1AF01EFE8056006BE90A /* FakeViewController.swift in Sources */,
@@ -653,7 +657,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FAZH6E59JU;
 				INFOPLIST_FILE = RentBi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = info.vteam.RentBi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -668,7 +672,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FAZH6E59JU;
 				INFOPLIST_FILE = RentBi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = info.vteam.RentBi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
